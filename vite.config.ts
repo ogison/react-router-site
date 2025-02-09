@@ -5,4 +5,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  // server: {
+  //   allowedHosts: [
+  //     "6d266c81-c425-4b6e-a2ca-7a093894d91e-00-2ujwznhwd6lmb.pike.replit.dev",
+  //   ],
+  // },
+  server: {
+    host: "0.0.0.0",
+  },
 });
