@@ -1,10 +1,21 @@
-
 @import "tailwindcss";
 
 @layer base {
   body {
-    @apply bg-white text-gray-800 font-['Press_Start_2P'];
+    @apply bg-white text-gray-800 font-['Noto_Sans_JP'];
   }
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500;
+}
+
+.card {
+  @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow;
+}
+
+.btn {
+  @apply px-6 py-2 rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors;
 }
 
 .retro-border {

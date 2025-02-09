@@ -11,17 +11,18 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main id="main-content" className="pt-16">
+        <div className="gradient-bg py-24 px-4">
         <header className="py-16 px-4 bg-white">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl mb-4 leading-relaxed">山田 太郎</h1>
-            <p className="text-lg">フルスタックエンジニア</p>
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h1 className="text-5xl font-bold mb-6">山田 太郎</h1>
+            <p className="text-xl opacity-90">フルスタックエンジニア</p>
           </div>
-        </header>
+        </div>
 
-        <section className="py-16 px-4">
+        <section className="py-20 px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl mb-8 text-center">スキル</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -58,6 +59,38 @@ export default function Home() {
                   <p className="text-xs mb-4">{project.tech}</p>
                   <a 
                     href={project.link}
+
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center">ブログ</h2>
+            <div className="grid gap-8 md:grid-cols-2">
+              {[
+                {
+                  title: "マイクロサービスアーキテクチャの実践",
+                  date: "2024.02.15",
+                  excerpt: "最近のプロジェクトで学んだマイクロサービスの実装パターンについて解説します。",
+                  link: "/blog/microservices"
+                },
+                {
+                  title: "フロントエンドのパフォーマンスチューニング",
+                  date: "2024.02.01",
+                  excerpt: "Reactアプリケーションの表示速度を改善するためのテクニックをご紹介。",
+                  link: "/blog/frontend-performance"
+                }
+              ].map((post) => (
+                <article key={post.title} className="card">
+                  <div className="mb-4 text-sm text-gray-500">{post.date}</div>
+                  <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                  <Link to={post.link} className="btn">
+                    続きを読む
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
                     className="retro-btn inline-block text-xs"
                     target="_blank"
                     rel="noopener noreferrer"
