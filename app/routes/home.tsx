@@ -11,32 +11,32 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <main id="main-content" className="pt-16">
-        <header className="py-16 px-4 bg-gradient-to-r from-blue-500 to-purple-600">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-4xl font-bold mb-4">山田 太郎</h1>
-            <p className="text-xl">フルスタックエンジニア</p>
+        <header className="py-16 px-4 bg-white">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl mb-4 leading-relaxed">山田 太郎</h1>
+            <p className="text-lg">フルスタックエンジニア</p>
           </div>
         </header>
 
-        <section aria-labelledby="skills-heading" className="py-16 px-4">
+        <section className="py-16 px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 id="skills-heading" className="text-2xl font-bold text-gray-900 dark:text-white mb-8">スキル</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <h2 className="text-2xl mb-8 text-center">スキル</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((skill) => (
-                <div key={skill} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow transition-transform hover:scale-105">
-                  <span className="block text-center">{skill}</span>
+                <div key={skill} className="retro-border bg-white p-4 text-center text-sm">
+                  {skill}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section aria-labelledby="projects-heading" className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
+        <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-3xl mx-auto">
-            <h2 id="projects-heading" className="text-2xl font-bold text-gray-900 dark:text-white mb-8">プロジェクト</h2>
+            <h2 className="text-2xl mb-8 text-center">プロジェクト</h2>
             <div className="grid gap-8">
               {[
                 {
@@ -52,16 +52,15 @@ export default function Home() {
                   link: "https://github.com/username/task-manager"
                 }
               ].map((project) => (
-                <article key={project.title} className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{project.tech}</p>
+                <article key={project.title} className="retro-border bg-white p-6">
+                  <h3 className="text-xl mb-2">{project.title}</h3>
+                  <p className="mb-4 text-sm">{project.description}</p>
+                  <p className="text-xs mb-4">{project.tech}</p>
                   <a 
                     href={project.link}
-                    className="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+                    className="retro-btn inline-block text-xs"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${project.title}のGitHubリポジトリを開く`}
                   >
                     プロジェクトを見る
                   </a>
@@ -71,17 +70,13 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="py-8 px-4 bg-gray-900 text-white">
+        <footer className="py-8 px-4 bg-white border-t-4 border-black">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="flex justify-center space-x-6 mb-4">
-              <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" aria-label="GitHubプロフィール">
-                GitHub
-              </a>
-              <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" aria-label="LinkedInプロフィール">
-                LinkedIn
-              </a>
+            <div className="flex justify-center space-x-8 mb-4">
+              <a href="https://github.com/username" className="retro-btn text-xs">GitHub</a>
+              <a href="https://linkedin.com/in/username" className="retro-btn text-xs">LinkedIn</a>
             </div>
-            <p className="text-sm text-gray-400">© 2024 山田 太郎. All rights reserved.</p>
+            <p className="text-xs">© 2024 山田 太郎</p>
           </div>
         </footer>
       </main>
