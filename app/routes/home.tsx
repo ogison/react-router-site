@@ -1,5 +1,6 @@
 
 import type { Route } from "./+types/home";
+import { Navbar } from "../components/Navbar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,6 +12,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <Navbar />
       <header className="py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
