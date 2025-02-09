@@ -29,9 +29,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="エンジニアポートフォリオサイト - スキル、プロジェクト実績、技術ブログをご覧いただけます" />
+        <meta property="og:title" content="山田太郎のポートフォリオ" />
+        <meta property="og:description" content="エンジニアポートフォリオサイト - スキル、プロジェクト実績、技術ブログをご覧いただけます" />
+        <meta property="og:type" content="website" />
         <meta property="og:image" content="/cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
         <Meta />
         <Links />
       </head>
