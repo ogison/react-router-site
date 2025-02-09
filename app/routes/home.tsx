@@ -1,4 +1,5 @@
 
+import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import { Navbar } from "../components/Navbar";
 
@@ -15,14 +16,13 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="pt-16">
         <div className="gradient-bg py-24 px-4">
-        <header className="py-16 px-4 bg-white">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-5xl font-bold mb-6">山田 太郎</h1>
             <p className="text-xl opacity-90">フルスタックエンジニア</p>
           </div>
         </div>
 
-        <section className="py-20 px-4">
+        <section id="skills" className="py-20 px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl mb-8 text-center">スキル</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-gray-50">
+        <section id="projects" className="py-16 px-4 bg-gray-50">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl mb-8 text-center">プロジェクト</h2>
             <div className="grid gap-8">
@@ -59,8 +59,19 @@ export default function Home() {
                   <p className="text-xs mb-4">{project.tech}</p>
                   <a 
                     href={project.link}
+                    className="retro-btn inline-block text-xs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    プロジェクトを見る
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <section className="py-20 px-4 bg-white">
+        <section id="blog" className="py-20 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center">ブログ</h2>
             <div className="grid gap-8 md:grid-cols-2">
@@ -91,19 +102,7 @@ export default function Home() {
           </div>
         </section>
 
-                    className="retro-btn inline-block text-xs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    プロジェクトを見る
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <footer className="py-8 px-4 bg-white border-t-4 border-black">
+        <footer id="contact" className="py-8 px-4 bg-white border-t-4 border-black">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center space-x-8 mb-4">
               <a href="https://github.com/username" className="retro-btn text-xs">GitHub</a>
