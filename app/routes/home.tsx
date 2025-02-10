@@ -23,12 +23,53 @@ export default function Home() {
         </div>
 
         <section id="skills" className="py-20 px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl mb-8 text-center">スキル</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((skill, index) => (
-                <div key={skill} style={{animationDelay: `${index * 0.1}s`}} className="retro-border bg-white p-4 text-center text-sm animate-[fadeIn_0.6s_ease-out] hover:animate-pulse">
-                  {skill}
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl mb-12 text-center">スキル</h2>
+            <div className="grid gap-8">
+              {[
+                {
+                  category: "フロントエンド",
+                  skills: [
+                    { name: "React", level: 90 },
+                    { name: "TypeScript", level: 85 },
+                    { name: "HTML/CSS", level: 95 },
+                  ]
+                },
+                {
+                  category: "バックエンド",
+                  skills: [
+                    { name: "Node.js", level: 80 },
+                    { name: "Python", level: 85 },
+                    { name: "MySQL", level: 75 },
+                  ]
+                },
+                {
+                  category: "インフラ/その他",
+                  skills: [
+                    { name: "AWS", level: 70 },
+                    { name: "Docker", level: 75 },
+                    { name: "Git", level: 85 },
+                  ]
+                }
+              ].map((category) => (
+                <div key={category.category} className="card mb-6">
+                  <h3 className="text-xl mb-4">{category.category}</h3>
+                  <div className="space-y-4">
+                    {category.skills.map((skill) => (
+                      <div key={skill.name} className="relative">
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm">{skill.name}</span>
+                          <span className="text-sm">{skill.level}%</span>
+                        </div>
+                        <div className="h-2 bg-gray-300 rounded-full overflow-hidden">
+                          <div 
+                            className="h-full bg-white transition-all duration-500 ease-out"
+                            style={{ width: `${skill.level}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
