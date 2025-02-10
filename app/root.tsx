@@ -29,9 +29,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="エンジニアポートフォリオサイト - スキル、プロジェクト実績、技術ブログをご覧いただけます" />
-        <meta property="og:title" content="山田太郎のポートフォリオ" />
-        <meta property="og:description" content="エンジニアポートフォリオサイト - スキル、プロジェクト実績、技術ブログをご覧いただけます" />
+        <meta
+          name="description"
+          content="Webエンジニア ogisonのポートフォリオサイトです"
+        />
+        <meta property="og:title" content="ogisonのポートフォリオ" />
+        <meta
+          property="og:description"
+          content="Webエンジニア ogisonのポートフォリオサイトです"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/cover.jpg" />
         <meta property="og:image:width" content="1200" />
