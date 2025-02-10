@@ -22,19 +22,12 @@
 
 @layer base {
   body {
-    @apply bg-black text-white font-['Press_Start_2P'] scroll-smooth leading-relaxed;
+    @apply bg-black text-white font-['Press_Start_2P'] scroll-smooth;
     image-rendering: pixelated;
-    letter-spacing: 0.05em;
   }
 
   h1, h2, h3 {
-    @apply font-['Press_Start_2P'] tracking-wider text-shadow-md;
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.2);
-  }
-
-  p, a {
-    @apply leading-loose;
-    letter-spacing: 0.08em;
+    @apply font-['Press_Start_2P'] tracking-wider;
   }
 }
 
@@ -64,17 +57,9 @@
 }
 
 .card {
-  @apply bg-black border-4 border-white p-8 transition-all duration-300;
+  @apply bg-black border-4 border-white p-6 transition-all duration-300;
   box-shadow: 0 0 0 4px #000, 4px 4px 0 8px #fff;
   animation: float 3s ease-in-out infinite;
-}
-
-.card h3 {
-  @apply text-2xl mb-4;
-}
-
-.card p {
-  @apply text-gray-300 mb-6;
 }
 
 .card:hover {
