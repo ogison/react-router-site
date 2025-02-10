@@ -25,7 +25,7 @@ export default function Home() {
         <section id="skills" className="py-20 px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl mb-12 text-center">スキル</h2>
-            <div className="max-w-2xl mx-auto space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
               {[
                 { name: "React", level: 90, icon: "⚛️" },
                 { name: "TypeScript", level: 85, icon: "📘" },
@@ -37,7 +37,7 @@ export default function Home() {
                 { name: "Docker", level: 75, icon: "🐋" },
                 { name: "Git", level: 85, icon: "📦" }
               ].map((skill) => (
-                <div key={skill.name} className="card p-4">
+                <div key={skill.name} className="card p-4 hover:scale-105 transition-transform">
                   <div className="flex items-center gap-4">
                     <span className="text-2xl">{skill.icon}</span>
                     <div className="flex-1">
@@ -62,7 +62,7 @@ export default function Home() {
         <section id="projects" className="py-16 px-4 bg-gray-50">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl mb-8 text-center">プロジェクト</h2>
-            <div className="grid gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-4">
               {[
                 {
                   title: "ショッピングアプリ",
