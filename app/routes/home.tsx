@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import Hero from "~/layouts/hero";
+import SkillList from "~/layouts/skill-list";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -16,46 +17,7 @@ export default function Home() {
   return (
     <main id="main-content" className="pt-16">
       <Hero />
-
-      <section id="skills" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl mb-12 text-center">スキル</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
-            {[
-              { name: "React", level: 90, icon: "⚛️" },
-              { name: "TypeScript", level: 85, icon: "📘" },
-              { name: "HTML/CSS", level: 95, icon: "🎨" },
-              { name: "Node.js", level: 80, icon: "🟢" },
-              { name: "Python", level: 85, icon: "🐍" },
-              { name: "MySQL", level: 75, icon: "📊" },
-              { name: "AWS", level: 70, icon: "☁️" },
-              { name: "Docker", level: 75, icon: "🐋" },
-              { name: "Git", level: 85, icon: "📦" },
-            ].map((skill) => (
-              <div
-                key={skill.name}
-                className="card p-4 hover:scale-105 transition-transform"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="text-2xl">{skill.icon}</span>
-                  <div className="flex-1">
-                    <div className="flex justify-between mb-2">
-                      <span className="font-bold">{skill.name}</span>
-                      <span className="text-sm">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-white transition-all duration-500 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SkillList />
 
       <section id="projects" className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
