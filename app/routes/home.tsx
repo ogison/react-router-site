@@ -17,8 +17,8 @@ export default function Home() {
       <main id="main-content" className="pt-16">
         <div className="gradient-bg py-24 px-4">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">山田 太郎</h1>
-            <p className="text-xl opacity-90">フルスタックエンジニア</p>
+            <h1 className="text-5xl font-bold mb-6 animate-[fadeIn_1s_ease-out]">山田 太郎</h1>
+            <p className="text-xl opacity-90 animate-[fadeIn_1.2s_ease-out]">フルスタックエンジニア</p>
           </div>
         </div>
 
@@ -26,8 +26,8 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl mb-8 text-center">スキル</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((skill) => (
-                <div key={skill} className="retro-border bg-white p-4 text-center text-sm">
+              {["React", "TypeScript", "Node.js", "Python", "AWS", "Docker"].map((skill, index) => (
+                <div key={skill} style={{animationDelay: `${index * 0.1}s`}} className="retro-border bg-white p-4 text-center text-sm animate-[fadeIn_0.6s_ease-out] hover:animate-pulse">
                   {skill}
                 </div>
               ))}
