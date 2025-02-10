@@ -1,91 +1,65 @@
-
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Press Start 2P';
-  src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes glitch {
-  0% { transform: translate(0) }
-  20% { transform: translate(-2px, 2px) }
-  40% { transform: translate(-2px, -2px) }
-  60% { transform: translate(2px, 2px) }
-  80% { transform: translate(2px, -2px) }
-  100% { transform: translate(0) }
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 @layer base {
   body {
-    @apply bg-black text-white font-['Press_Start_2P'] scroll-smooth;
-    image-rendering: pixelated;
+    @apply bg-white text-gray-800 font-['Noto_Sans_JP'] scroll-smooth;
   }
 
   h1, h2, h3 {
-    @apply font-['Press_Start_2P'] tracking-wider;
+    @apply font-bold tracking-tight;
   }
 }
 
 .gradient-bg {
-  background: repeating-linear-gradient(
-    45deg,
-    #000,
-    #000 10px,
-    #111 10px,
-    #111 20px
-  );
-  position: relative;
-  overflow: hidden;
+  @apply bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 animate-[fadeIn_1s_ease-out];
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
 
-.gradient-bg::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #ff0055, #ff00ff);
-  mix-blend-mode: overlay;
-  opacity: 0.3;
-  animation: glitch 2s infinite;
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .card {
-  @apply bg-black border-4 border-white p-6 transition-all duration-300;
-  box-shadow: 0 0 0 4px #000, 4px 4px 0 8px #fff;
-  animation: float 3s ease-in-out infinite;
+  @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 0 4px #000, 8px 8px 0 12px #fff;
+  transform: translateY(-5px);
 }
 
 .btn {
-  @apply px-6 py-2 bg-black text-white border-4 border-white font-['Press_Start_2P'] 
-         hover:bg-white hover:text-black transition-all duration-300;
-  box-shadow: 4px 4px 0 #fff;
-}
-
-.btn:hover {
-  box-shadow: -4px -4px 0 #fff;
+  @apply px-6 py-2 rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors;
 }
 
 .retro-border {
-  @apply border-4 border-white bg-black;
-  box-shadow: 4px 4px 0 #fff;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #000;
+  box-shadow: 4px 4px 0 #000;
 }
 
 .retro-btn {
-  @apply px-4 py-2 bg-black text-white border-4 border-white hover:bg-white hover:text-black 
-         transition-all duration-300;
-  box-shadow: 4px 4px 0 #fff;
+  @apply px-4 py-2 bg-white border-2 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all;
 }
 
 .pixel-corners {
