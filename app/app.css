@@ -1,19 +1,35 @@
 @import "tailwindcss";
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @layer base {
@@ -21,7 +37,9 @@
     @apply bg-white text-gray-800 font-['Noto_Sans_JP'] scroll-smooth;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-bold tracking-tight;
   }
 }
@@ -33,9 +51,15 @@
 }
 
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .card {
@@ -56,6 +80,12 @@
   border-width: 4px;
   border-color: #000;
   box-shadow: 4px 4px 0 #000;
+  @apply hover:shadow-xl transition-all duration-300;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.retro-border:hover {
+  transform: translateY(-5px);
 }
 
 .retro-btn {
