@@ -1,10 +1,27 @@
-export async function getNavbarContents() {
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  const navbarContents = [
-    { id: 1, name: "ホーム", href: "/" },
-    { id: 2, name: "スキル", href: "#skills" },
-    { id: 3, name: "プロジェクト", href: "#projects" },
-    { id: 4, name: "連絡先", href: "#contact" },
-  ];
-  return navbarContents;
+type Tag = {
+  name: string;
+};
+
+type BlogData = {
+  title: string;
+  url: string;
+  tags: Tag[];
+  label: string;
+  created_at: string;
+};
+
+export async function getBlogList() {
+  const userName = "ogison";
+  const url =
+    "https://qiita.com/api/v2/items?page=1&per_page=100&query=user:" + userName;
+  const res = await fetch(url);
+  const data = await res.json();
+
+  return data.map((post: BlogData) => ({
+    title: post.title,
+    url: post.url,
+    tags: post.tags.map((tag) => tag.name),
+    label: "qiita",
+    date: post.created_at,
+  }));
 }
