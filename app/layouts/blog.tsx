@@ -17,21 +17,23 @@ export default function Blog({ articles }: Props) {
         <h2 className="text-2xl mb-12 text-center">ブログ</h2>
         <div className="grid gap-8 md:grid-cols-2">
           {articles.slice(0, 4).map((post) => (
-            <article
+            <Link
               key={post.title}
-              className="card retro-border flex flex-col"
+              to={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card retro-border"
             >
-              <div className="mb-4 text-sm text-gray-500">
-                {changeDate(post.published_at)}
-              </div>
-              <h3 className="text-xl font-bold mb-4">{post.title}</h3>
-              <Link
-                to={post.url}
-                className="retro-btn rounded-xl mt-auto px-4 max-w-fit"
-              >
-                続きを読む
-              </Link>
-            </article>
+              <article key={post.title} className="flex flex-col h-full">
+                <div className="mb-4 text-sm text-gray-500">
+                  {changeDate(post.published_at)}
+                </div>
+                <h3 className="text-xl font-bold mb-4">{post.title}</h3>
+                <span className="retro-btn rounded-xl mt-auto px-4 max-w-fit">
+                  続きを読む
+                </span>
+              </article>
+            </Link>
           ))}
         </div>
       </div>
